@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Header from "../components/header"
+import Footer from "../components/footer"
 import SEO from "../components/seo"
 import Img from 'gatsby-image'
 import svg from "../images/pattern.svg"
@@ -213,7 +214,7 @@ const Eat = () => {
         </div>
     </section>
 </div>
-
+    <Footer />
     </div>
   </>
   )
