@@ -214,8 +214,6 @@ const Eat = () => {
     </section>
 </div>
 
-        <h1>Eat page</h1>
-        <Link to="/">Home</Link>
     </div>
   </>
   )

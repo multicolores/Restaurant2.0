@@ -25,6 +25,36 @@ body::-webkit-scrollbar {
   height: 0px;
 }
 
+h1 {
+  color: $text_color;
+  font-size: 7em;
+  font-weight: normal;
+  letter-spacing: 15px;
+}
+p {
+  color: white;
+  font-size: 1em;
+  letter-spacing: 5px;
+}
+h4 {
+  font-style: italic;
+  font-size: 1em;
+  font-weight: normal;
+}
+h2 {
+  font-size: 2.5em;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-weight: 500;
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
 //! Animation
 
 @keyframes fade-in {
@@ -51,7 +81,7 @@ header {
   overflow: hidden;
   // background: lightblue url("photo/home_image.jpg") no-repeat fixed center;
   // background-size: cover;
-  z-index: -10;
+  z-index: 0;
   .bg-color {
     z-index: -2;
     width: 100%;
@@ -93,7 +123,7 @@ header {
         position: absolute;
         left: 0;
         top: 50%;
-        background: $background_color;
+        background: white;
         height: 1px;
         width: 30px;
         transform: translate(-50%, -10%);
@@ -103,7 +133,7 @@ header {
         position: absolute;
         right: 0;
         top: 50%;
-        background: $background_color;
+        background: white;
         height: 1px;
         width: 30px;
         transform: translate(20%, 50%);
@@ -124,7 +154,7 @@ header {
         position: absolute;
         width: 100%;
         height: 1px;
-        background: $background_color;
+        background: white;
         left: 0;
         bottom: 0;
       }
@@ -148,79 +178,70 @@ header {
   }
 }
 
+//! header pages
+.header_section {
+  width: 100%;
+  height: 100vh;
+  // overflow: hidden;
+  background: $background_color;
+  position: relative;
+  .image {
+    height: 100%;
+    opacity: 0.4;
+    position: absolute;
+  }
+  .text_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    h1 {
+      animation: fade-in 1s;
+      animation-fill-mode: backwards;
+      animation-delay: 0.2s;
+    }
+    p {
+      padding-left: 5%;
+      padding-right: 5%;
+      text-align: center;
+      animation: fade-in 1s;
+      animation-delay: 0.5s;
+      animation-fill-mode: backwards;
+    }
+    a {
+      margin-top: 4%;
+      font-style: italic;
+      cursor: pointer;
+      text-decoration: none;
+      color: white;
+      font-weight: 10;
+      border: 1px solid $text_color;
+      padding: 15px;
+      padding-left: 25px;
+      padding-right: 25px;
+      transition: 0.5s;
+      animation: fade-in 1s;
+      animation-delay: 0.8s;
+      animation-fill-mode: backwards;
+      &:hover {
+        background: $text_color;
+      }
+    }
+  }
+}
+
 //! Eat page
 .eat_page {
   width: 100%;
   background: $background_color;
-  .header_section {
-    width: 100%;
-    height: 100vh;
-    // overflow: hidden;
-    background: $background_color;
-    position: relative;
-    .image {
-      height: 100%;
-      opacity: 0.4;
-      position: absolute;
-    }
-    .text_container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      h1 {
-        color: $text_color;
-        font-size: 7em;
-        font-weight: normal;
-        letter-spacing: 15px;
-        animation: fade-in 1s;
-        animation-fill-mode: backwards;
-        animation-delay: 0.2s;
-      }
-      p {
-        color: white;
-        font-size: 1em;
-        letter-spacing: 5px;
-        padding-left: 5%;
-        padding-right: 5%;
-        text-align: center;
-        animation: fade-in 1s;
-        animation-delay: 0.5s;
-        animation-fill-mode: backwards;
-      }
-      a {
-        margin-top: 4%;
-        font-style: italic;
-        cursor: pointer;
-        text-decoration: none;
-        color: white;
-        font-weight: 10;
-        border: 1px solid $text_color;
-        padding: 15px;
-        padding-left: 25px;
-        padding-right: 25px;
-        transition: 0.5s;
-        animation: fade-in 1s;
-        animation-delay: 0.8s;
-        animation-fill-mode: backwards;
-        &:hover {
-          background: $text_color;
-        }
-      }
-    }
-  }
+  position: relative;
+  margin-bottom: 100vh;
   .container {
-    max-width: 1200px;
-    margin-left: 10%;
-    margin-right: 10%;
     gap: 20px;
-    padding-top: 10%;
-    padding-bottom: 10%;
-
     section {
       display: flex;
       justify-content: center;
@@ -237,17 +258,10 @@ header {
         }
         h4 {
           text-align: center;
-          font-style: italic;
-          font-size: 1em;
-          font-weight: normal;
           margin-bottom: 1%;
         }
         h2 {
           text-align: center;
-          font-size: 2.5em;
-          text-transform: uppercase;
-          letter-spacing: 10px;
-          font-weight: 500;
           margin-bottom: 10%;
           position: relative;
           &::before {
@@ -370,6 +384,132 @@ header {
             width: 90%;
             margin-left: auto;
             margin-top: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+//! visit
+
+.visit_page {
+  background: $background_color;
+  margin-bottom: 100vh;
+  z-index: 1;
+  position: relative;
+  .container {
+    .about {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      text-align: center;
+      margin-bottom: 25%;
+      @media (max-width: 630px) {
+        margin-bottom: 50%;
+      }
+      .text {
+        width: 60%;
+        margin-bottom: 5%;
+        @media (max-width: 1000px) {
+          width: 75%;
+        }
+      }
+      .images_div {
+        width: 100%;
+        height: 70%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        div {
+          height: 100%;
+          width: 30%;
+          overflow: hidden;
+          @media (max-width: 1000px) {
+            width: 40%;
+          }
+          .image {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .chef {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+      @media (max-width: 1000px) {
+        flex-wrap: wrap;
+      }
+      div {
+        width: 40%;
+        text-align: center;
+        @media (max-width: 1000px) {
+          width: 50%;
+        }
+      }
+      .image {
+        width: 100%;
+      }
+      .text {
+        width: 50%;
+        @media (max-width: 1000px) {
+          width: 70%;
+        }
+        @media (max-width: 630px) {
+          width: 100%;
+        }
+      }
+    }
+
+    .menu {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      .images_container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        div {
+          width: 30%;
+          height: 80%;
+          position: relative;
+          overflow: hidden;
+          @media (max-width: 1000px) {
+            width: 40%;
+          }
+          @media (max-width: 700px) {
+            width: 70%;
+            margin-bottom: 15%;
+          }
+          .image {
+            height: 100%;
+            width: auto;
+            transition: 0.5s ease;
+
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+          h2 {
+            position: absolute;
+            top: 10%;
+            background: $background_color;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            pointer-events: none;
           }
         }
       }
