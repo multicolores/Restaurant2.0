@@ -556,7 +556,7 @@ header {
       }
       &:hover {
         &::after {
-          width: 0;
+          transform: scale(0);
         }
       }
     }
