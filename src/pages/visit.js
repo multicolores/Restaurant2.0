@@ -22,7 +22,7 @@ const Visit = () => {
           }
         }
       }
-      home_image: file(relativePath: { eq: "home_image.jpg" }) {
+      home_image: file(relativePath: { eq: "home_image2.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 2000, quality: 100) {
             ...GatsbyImageSharpFluid
